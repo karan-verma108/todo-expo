@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Text, View } from 'react-native';
 
 export default function ProgressStats() {
-  const { colors, isDarkMode, toggleDarkMode } = useTheme();
+  const { colors } = useTheme();
 
   const settingsStyles = createSettingsStyles(colors);
 

@@ -1,17 +1,13 @@
 import { createSettingsStyles } from '@/assets/styles/settings.styles';
-import { ProgressStats } from '@/components';
+import { DangerZone, Preferences, ProgressStats } from '@/components';
 import useTheme from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Settings() {
-  const [isAuthSync, setIsAutoSync] = useState(true);
-  const [isNotificationsEnabled, setIsNotificationsEnabled] = useState(true);
-
-  const { colors, isDarkMode, toggleDarkMode } = useTheme();
+  const { colors } = useTheme();
 
   const settingsStyles = createSettingsStyles(colors);
 
@@ -39,6 +35,8 @@ export default function Settings() {
           showsVerticalScrollIndicator={false}
         >
           <ProgressStats />
+          <Preferences />
+          <DangerZone />
         </ScrollView>
       </SafeAreaView>
     </LinearGradient>
